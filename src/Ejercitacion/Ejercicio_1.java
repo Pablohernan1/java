@@ -24,7 +24,7 @@ public class Ejercicio_1 {
         Scanner numero = new Scanner(System.in); 
      
         //Leemos por teclado los 2 ingresos
-        System.out.println("Ingrese el primer numero:");
+        System.out.println("Ingrese el primer numero");
         num1 = numero.nextInt();
         
         System.out.println("Ingrese el segundo numero:");
