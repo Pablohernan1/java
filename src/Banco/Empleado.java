@@ -41,7 +41,7 @@ public class Empleado {
             this.salario = salario;
         } 
     }
-    public double salario(){
+    public double obtenerSalario(){
         return salario;
     }
     
