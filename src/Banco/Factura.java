@@ -14,9 +14,16 @@ public class Factura {
         
         this.numPieza = numPieza;
         this.descPieza = descPieza;
-        this.stock = stock;
+
         this.precio = precio;
         
+        if (stock > 0) {
+            this.stock = stock;
+        } else this.stock = 0;
+        
+        if (stock > 0) {
+            this.precio = precio;
+        } else this.precio = 0;
     }
     
     
@@ -59,10 +66,6 @@ public class Factura {
     public double obtenerMontoFactura(){
         
         double monto = this.stock * this.precio;
-        if (monto < 1) {
-           monto = this.precio = 0;
-           
-        }
         return monto;
     }
     
