@@ -17,13 +17,15 @@ public class Factura {
 
         this.precio = precio;
         
-        if (stock > 0) {
+        if (stock < 1 || precio < 1) {
+            this.stock = 0;
+            this.precio = 0;
+
+        } else {
             this.stock = stock;
-        } else this.stock = 0;
-        
-        if (stock > 0) {
             this.precio = precio;
-        } else this.precio = 0;
+        }
+        
     }
     
     
@@ -65,7 +67,16 @@ public class Factura {
     
     public double obtenerMontoFactura(){
         
-        double monto = this.stock * this.precio;
+        double monto = 0; 
+        if (this.stock < 1 ) {
+            System.out.printf("El monto de la factura es de: $%.0f%n%n", monto);
+        } else if (this.precio < 1) {
+            System.out.printf("El monto de la factura es de: $%.1f%n%n", monto);
+        } else{
+            monto = this.stock * this.precio;
+            System.out.printf("El monto de la factura es de: $%.2f%n%n", monto);
+        }
+        
         return monto;
     }
     

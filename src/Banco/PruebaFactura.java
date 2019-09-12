@@ -20,22 +20,32 @@ package Banco;
  **/
 public class PruebaFactura {
     public static void main(String[] args){
-        
-        Factura factura = new Factura("1","Tornillo",-1,2);
-        
-        factura.establecerDescPieza("tornillo/s");
-        factura.establecerPrecio(3);
-       // factura.establecerStock(15);
-        System.out.printf("El precio de %d %s es de: $%.2f%n",factura.obtenerStock() ,factura.obenerDescPieza(), factura.obtenerMontoFactura());
+        //Utilizamos el constructor
+        Factura factura = new Factura("1","tornillo/s",5,22);
+        System.out.printf("El numero de pieza es: %s, la descripcion de la pies "
+                + "es: %s, la cantidad en stock es de: %d, y el precio es de: $"
+                + "%.2f%n%n",factura.obtenerNumPieza(), factura.obenerDescPieza(), factura.obtenerStock() , factura.obtenerPrecio());
        
+        //Verificamos que fucionen los metodos para establecer y obtener.
+        factura.establecerDescPieza("clavo/s");
+        factura.establecerPrecio(3);
+        factura.establecerStock(15);
+        System.out.printf("Hay %d %s en stock y el precio es de: $%.2f c/u%n%n",factura.obtenerStock() ,factura.obenerDescPieza(), factura.obtenerPrecio());
+       
+        //Utilizamos el metodo de obtener Monto, y verificamos que los importes se muestren segun lo pedido.
+        factura.establecerStock(2);
+        factura.establecerPrecio(10);
+        factura.obtenerMontoFactura();
         
-        //Verificamos que si el precio es inferior a 0, no granbe el precio.
-
+        //si el stock es menor a 0, se tiene que mostrar el monto igual a 0
+        factura.establecerStock(-2);
+        factura.establecerPrecio(10);
+        factura.obtenerMontoFactura();
         
-
-        
-        
-        
-        
+        //si el precio es infreior a 0, se tiene que mostrar el monto igual a 0.0
+        factura.establecerStock(2);
+        factura.establecerPrecio(-10);
+        factura.obtenerMontoFactura();
+    
     }
 }

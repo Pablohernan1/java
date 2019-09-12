@@ -26,7 +26,7 @@ public class Cuenta {
         this.saldo = saldo;
     }
     
-    public double obtenerSaldo(){                       //
+    public double obtenerSaldo(){                       
         return saldo;
     }
     
