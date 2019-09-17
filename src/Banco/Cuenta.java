@@ -1,6 +1,5 @@
 package Banco;
 
-
 public class Cuenta {
     
     private String nombre, apellido;
@@ -33,18 +32,31 @@ public class Cuenta {
         } else System.out.println("El numero de dni debe tener al menos 7 digitos.");
     }
     
-    public Cuenta(){
-        
+    public Cuenta(String nombre, String apellido, double montoEnDolares){
+                
+        this.nombre = nombre;
+        this.apellido = apellido; 
+
+                if (montoEnDolares >= 0) {
+                    this.montoEnDolares = montoEnDolares;
+                } else System.out.println("El saldo inicial en U$D no puede ser infrerior a 0");
+
     }
 
-    
+    public Cuenta(double saldo, String nombre, String apellido){
+                        
+        this.nombre = nombre;
+        this.apellido = apellido; 
 
-        
-        
+        if (saldo >= 0) {
+            this.saldo = saldo;
+        } else System.out.println("El saldo inicial en $ no puede ser infrerior a 0");
+    }
+       
     public void establecerNombre(String nombre){	//Es linea se llama encabezado del mètodo
         this.nombre = nombre;				//Almacenar el nombre
     }
-   
+
     public String obtenerNombre(){				
 	return nombre;					//Devuelve el valor de la variable nombre	
     }
@@ -72,8 +84,6 @@ public class Cuenta {
     public void depositar(double saldo){                //Almacenamos el saldo 
         this.saldo = saldo;
     }
-    
-
     
     public void retirar(double retiro){
         
