@@ -7,28 +7,20 @@ public class Cuenta {
     private int dni, cuil;
     
     public Cuenta(String nombre, String apellido, double saldo, double montoEnDolaes, int dni, int cuil){
-        
         this.nombre = nombre;
         this.apellido = apellido; 
 
         if (Integer.toString(dni).length() >= 7) {
             this.dni = dni;
-
-        
             if (Integer.toString(cuil).length() >= 10) {
                 this.cuil = cuil;
-        
-
                 if (saldo >= 0) {
                     this.saldo = saldo;
                 } else System.out.println("El saldo inicial en $ no puede ser infrerior a 0");
-
                 if (montoEnDolares >= 0) {
                     this.montoEnDolares = montoEnDolaes;
                 } else System.out.println("El saldo inicial en U$D no puede ser infrerior a 0");
-                
             } else System.out.println("El numero de cuil debe tener al menos 7 digitos.");
-            
         } else System.out.println("El numero de dni debe tener al menos 7 digitos.");
     }
     
@@ -43,11 +35,9 @@ public class Cuenta {
 
     }
 
-    public Cuenta(double saldo, String nombre, String apellido){
-                        
+    public Cuenta(double saldo, String nombre, String apellido){              
         this.nombre = nombre;
         this.apellido = apellido; 
-
         if (saldo >= 0) {
             this.saldo = saldo;
         } else System.out.println("El saldo inicial en $ no puede ser infrerior a 0");
@@ -86,17 +76,11 @@ public class Cuenta {
     }
     
     public void retirar(double retiro){
-        
         if (retiro > this.saldo) {
             System.out.println("“El monto a retirar excede el saldo de la cuenta.");
         } else{
             this.saldo = saldo - retiro;
             System.out.printf("Su saldo actual es de: %.2f%n", this.saldo);
-        }
-        
-    }
-    
-    
-    
-    
+        }       
+    }  
 }
